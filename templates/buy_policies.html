@@ -24,6 +24,14 @@
 
                     <h2 class="fw-bold mb-2 text-uppercase">Purchase Policies</h2>
 
+                    {% for pol in index %}
+                      <div class="form-outline form-black mb-4">
+                      <h3 class="fw-bold mb-2 text-lowercase">Policy ID {{ pol.policy_id }} : {{pol.policy_name}}</h3>
+                      </div>
+                    {% endfor %}
+                     <div class="form-outline form-black mb-4">
+                      <a href="https://www.onlinesbi.com/sbicollect/icollecthome.htm" class="fw-bold mb-2 "><h1>Payment Link</h1></a>
+                      </div>
                     <div class="form-outline form-white mb-4">
                       <input type="number" id="Aadhar_no" name="Aadhar_no" class="form-control form-control-lg" />
                       <label class="form-label" for="Aadhar_no">Aadhar number</label>
@@ -37,6 +45,11 @@
                     <div class="form-outline form-white mb-4">
                       <input type="number" id="t_no" name="t_no" class="form-control form-control-lg" />
                       <label class="form-label" for=t_no>Transaction number</label>
+                    </div>
+
+                    <div class="form-outline form-white mb-4">
+                      <input type="number" id="pwd" name="pwd" class="form-control form-control-lg" />
+                      <label class="form-label" for=pwd>Password</label>
                     </div>
 
                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Submit</button>

@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4%)9kdam*$2km0qnd)^cs8uy&$qzn21_!f1)b4x0)f#d_1gtv+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','insurance-ex.herokuapp.com/']
+ALLOWED_HOSTS = ['127.0.0.1','insurance-ex.herokuapp.com/','localhost']
 
 
 # Application definition
@@ -42,7 +42,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -51,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'insaurexx.urls'
+ROOT_URLCONF = 'insurancexx.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'insaurexx.wsgi.application'
+WSGI_APPLICATION = 'insurancexx.wsgi.application'
 
 
 # Database
@@ -77,8 +76,11 @@ WSGI_APPLICATION = 'insaurexx.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'telusko',
+        'USER': 'postgres',
+        'PASSWORD': 'Maheshwari@123',
+        'HOST': 'localhost'
     }
 }
 

@@ -1,5 +1,5 @@
 from django.db import models
-
+import datetime
 # Create your models here.
 class policy(models.Model):
     policy_id = models.IntegerField()
@@ -21,4 +21,9 @@ class customer(models.Model):
 class user_policy(models.Model):
     Aadhar_card_number = models.ForeignKey(customer, on_delete=models.CASCADE)
     policy_id=models.ForeignKey(policy,on_delete=models.CASCADE)
+    policy_date=models.DateField(default=datetime.date.today)
     transaction_no=models.IntegerField()
+class feedback(models.Model):
+    Name = models.CharField(max_length=100)
+    feedback_user = models.CharField(max_length=500)
+    Rating = models.IntegerField()
